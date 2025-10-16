@@ -1,0 +1,30 @@
+# Zusammenfassung der Performance-Optimierungen für HiggsAudio TTS
+
+optimierungen:
+  - mixed_precision:
+      status: aktiviert
+      details: "Inference mit torch.bfloat16 (autocast) für maximale GPU-Auslastung und geringeren Speicherbedarf."
+  - cuda_graphs:
+      status: aktiviert
+      details: "Statischer KV-Cache und CUDA Graphs für schnelles Vorwärmen und minimale Latenz."
+  - batch_processing:
+      status: aktiviert
+      details: "Absatzweises Processing und Chunking für effiziente Auslastung und vollständige Textverarbeitung."
+  - modell_laden:
+      status: einmalig
+      details: "Das Modell wird nur einmal geladen und für alle Absätze wiederverwendet."
+  - speicherverwaltung:
+      status: optimiert
+      details: "Alle Audiodaten werden im Speicher gesammelt und am Ende als WAV zusammengefügt."
+  - logging:
+      status: erweitert
+      details: "RTF (Real Time Factor) und TTS-Dauer werden für jeden Absatz und das Gesamtergebnis geloggt."
+  - device_selection:
+      status: auto
+      details: "Automatische Auswahl von CUDA, MPS oder CPU je nach Verfügbarkeit."
+  - tokenizer_chunking:
+      status: dynamisch
+      details: "Automatische Chunk-Größenanpassung, um Modell-Limits einzuhalten und vollständige Verarbeitung zu gewährleisten."
+  - code_refactoring:
+      status: durchgeführt
+      details: "Code modularisiert und für reproduzierbare, effiziente Inferenz angepasst."

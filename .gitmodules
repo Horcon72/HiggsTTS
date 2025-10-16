@@ -1,0 +1,3 @@
+[submodule "higgs-audio"]
+	path = higgs-audio
+	url = https://github.com/Horcon72/higgs-audio.git
